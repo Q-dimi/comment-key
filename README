@@ -1,1 +1,28 @@
-type some comments somewhere, leave and have your team login and see where all the comments are and have them do stuff. not done and not sure it traverse is being used correctly. havnt run yet either. all in one go. haha ok atrain not to shabby. haha ok atrain YOU'RE DUMB! SHUT UP OR IMA POP YOU DAWG. POP POP POP POP.. POP POP.. POP. -sicle hehe good kid yo.. he was a good kid yo.. stop guys.. please yo PLEASE YO EHHHMMMMehmmmmm waaaaa (//^-^keyWord this-comment-is-for-adding-a-number)
+# comment_find
+
+Write comments with a specific syntax so that your team members can know where to go and what to do.
+
+```js
+const comment_find = require("./index");
+
+const folders = [
+  { folder: "./example_1", files: ["wow.js"] },
+  { folder: "./example_2", files: "all" },
+  { folder: "./example_3", files: "all" },
+  { folder: "./example_4", files: "all" },
+];
+
+var result = comment_find(folders);
+var comments = result.comments;
+var errors = result.errors;
+
+console.log("COMMENTS");
+for (let i = 0; i < comments.length; i++) {
+  console.log(comments[i]);
+}
+
+console.log("ERRORS");
+for (let i = 0; i < errors.length; i++) {
+  console.log(errors[i]);
+}
+```
