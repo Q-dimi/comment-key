@@ -3,7 +3,7 @@
 Write comments with a specific syntax so that your team members can know where to go and what to do. Comments must be written in this syntax //^\*^(wow-man-you-are-so-awesome)
 
 ```js
-const comment_find = require("./index");
+const comment_find = require("comment_find");
 
 const folders = [
   { folder: "./example_1", files: ["wow.js"] },
