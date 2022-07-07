@@ -5,7 +5,10 @@ function comment_find(folders) {
     var exported_comments = [];
     var exported_errors = [];
 
-    if(typeof(folders) == 'object' && Array.isArray(folders) == true) { 
+    if(
+        typeof(folders) == 'object' && 
+        Array.isArray(folders) == true
+    ) { 
 
         for(let i = 0; i < folders.length; i++) {
 
@@ -17,6 +20,7 @@ function comment_find(folders) {
 
                         var data = fs.readFileSync(filepath, 'utf8');
                         data = data.split('');
+
                         var line_number = 1;
 
                         for(let i = 0; i < data.length; i++) { 
@@ -74,19 +78,15 @@ function comment_find(folders) {
 
                             }
                         }
-
                     }
                 })
 
             } catch(err) { 
-
                 exported_comments.push({
                     folders: folders[i].folder,
                     error: err
                 })
-
             }
-
         }
     }
 
@@ -95,6 +95,6 @@ function comment_find(folders) {
         errors: exported_errors
     }
 
-}
+} 
 
 module.exports = comment_find;
