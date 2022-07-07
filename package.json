@@ -1,6 +1,6 @@
 {
   "name": "comment_find",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "find comments in files that tell your team what to do",
   "main": "index.js",
   "scripts": {
