@@ -11,7 +11,11 @@ function comment_find(folders, keyWords) {
 
             if(filename) { 
 
-                fs.readFileSync(filename, 'utf8', function(err, data) {
+                console.log(filepath + 'upper bound');
+
+                fs.readFileSync(filepath, 'utf8', function(err, data) {
+
+                    console.log(data);
 
                     if(err) { 
                         exported_errors.push({ 
@@ -25,7 +29,7 @@ function comment_find(folders, keyWords) {
 
                     for(let i = 0; i < string_contents.length; i++) { 
                         for(let j = 0; j < keyWords.length; j++) { 
-                            if(string_contents[i] == `//^-^${keyWords[j]}`) { 
+                            if(string_contents[i] == `//^*^${keyWords[j]}`) { 
                                 exported_comments.push({ 
                                     hint: 'control f this comment to find where it is', 
                                     folder: filepath, 
@@ -41,7 +45,7 @@ function comment_find(folders, keyWords) {
 
             } else { 
 
-                comment_find({folder: filepath, single: true}, keyWords);
+                return comment_find({folder: filepath, single: true}, keyWords);
 
             }
 
@@ -61,7 +65,9 @@ function comment_find(folders, keyWords) {
 
                     if(filename) { 
 
-                        fs.readFileSync(filename, 'utf8', function(err, data) {
+                        console.log(filepath + 'lower bound');
+
+                        fs.readFileSync(filepath, 'utf8', function(err, data) {
 
                             if(err) { 
                                 exported_errors.push({ 
@@ -75,7 +81,7 @@ function comment_find(folders, keyWords) {
 
                             for(let i = 0; i < string_contents.length; i++) { 
                                 for(let j = 0; j < keyWords.length; j++) { 
-                                    if(string_contents[i] == `//^-^${keyWords[j]}`) { 
+                                    if(string_contents[i] == `//^*^${keyWords[j]}`) { 
                                         exported_comments.push({ 
                                             hint: 'control f this comment to find where it is', 
                                             folder: filepath, 
@@ -91,7 +97,7 @@ function comment_find(folders, keyWords) {
 
                     } else { 
 
-                        comment_find({folder: filepath, single: true}, keyWords);
+                        return comment_find({folder: filepath, single: true}, keyWords);
 
                     }
 
@@ -115,7 +121,9 @@ function comment_find(folders, keyWords) {
 
                     if(filename) { 
 
-                        fs.readFileSync(filename, 'utf8', function(err, data) {
+                        console.log(filepath + 'lower bound');
+
+                        fs.readFileSync(filepath, 'utf8', function(err, data) {
 
                             if(err) { 
                                 exported_errors.push({ 
@@ -129,7 +137,7 @@ function comment_find(folders, keyWords) {
 
                             for(let i = 0; i < string_contents.length; i++) { 
                                 for(let j = 0; j < keyWords.length; j++) { 
-                                    if(string_contents[i] == `//^-^${keyWords[j]}`) { 
+                                    if(string_contents[i] == `//^*^${keyWords[j]}`) { 
                                         exported_comments.push({
                                             hint: 'control f this comment to find where it is', 
                                             folder: filepath, 
@@ -145,14 +153,14 @@ function comment_find(folders, keyWords) {
 
                     } else { 
 
-                        comment_find({folder: filepath, single: true}, keyWords);
+                        return comment_find({folder: filepath, single: true}, keyWords);
 
                     }
 
                 });
 
             }
-            
+
         }
 
     } else { 
