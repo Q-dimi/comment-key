@@ -1,6 +1,10 @@
 # comment_find
 
-Write comments with a specific syntax so that your team members know where to go and what to do. Comments must be written in this syntax //^\*^(your-comment-here)
+Write comments with a specific syntax so that your team members know where to go and what to do. Comments must be written in this syntax
+
+```js
+//^*^(your-comment-here)
+```
 
 ```js
 const comment_find = require("comment-find");
