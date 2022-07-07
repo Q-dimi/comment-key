@@ -10,14 +10,15 @@ const folders = [
 ];
 
 var result = comment_find(folders, keyWords);
-console.log(result);
 var comments = result.comments; 
 var errors = result.errors;
 
+console.log('COMMENTS');
 for(let i = 0; i < comments.length; i++) { 
     console.log((comments[i]));
 }
 
+console.log('ERRORS')
 for(let i = 0; i < errors.length; i++) { 
     console.log((errors[i]));
 }

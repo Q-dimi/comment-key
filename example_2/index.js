@@ -1,10 +1,10 @@
-//^*^delete delete-this-function-when-complete
+//^*^delete
 
 function hello_world() { 
     return 'hello world';
 }
 
-//^*^update update-this-function-when-complete
+//^*^update
 
 function update_function() { 
     return 'update';

@@ -7,21 +7,10 @@ function comment_find(folders, keyWords) {
             try {
                 fs.recurseSync(folders[i].folder, (filepath, relative, filename) => {
                     if(filename) { 
-                        const data = fs.readFileSync(filepath, 'utf8');
-                        var string_contents = data.split(' ');
-                        for(let i = 0; i < string_contents.length; i++) { 
-                            for(let j = 0; j < keyWords.length; j++) { 
-                                if(string_contents[i] == `//^*^${keyWords[j]}`) { 
-                                    exported_comments.push({
-                                        hint:  `control f this comment to find where it is`, 
-                                        folder: filepath, 
-                                        file: filename, 
-                                        comment: `//^*^${keyWords[j]}`,
-                                        message: string_contents[i+1].includes('-') ? string_contents[i+1] : `please make sure the format of your comment key is ' //^-^keyWord this-comment-is-for-adding-a-number- ' comments must have a ' - ' and end with ' - ' seperating the words`
-                                    })
-                                } 
-                            }
-                        }
+                        var data = fs.readFileSync(filepath, 'utf8');
+                        console.log(filepath);
+                        console.log(data);
+                        //check for keys here and push to comments - NOT DONE
                     }
                 })
             } catch(err) { 
