@@ -2,7 +2,7 @@ var comment_find = require('./index');
 
 const folders = [ 
     { folder: './example_1', files: ['wow.js'] },
-    { folder: './example_2', files: [] }, 
+    { folder: './example_2', files: 'all' }, 
     { folder: './example_3', files: ['account.js', 'bank.js'] },
     { folder: './example_4', files: 'all' },
 ];

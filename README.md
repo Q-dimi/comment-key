@@ -26,3 +26,7 @@ for (let i = 0; i < errors.length; i++) {
   console.log(errors[i]);
 }
 ```
+
+# use case
+
+You are a manager going through all of your files and making updates. You write comments so that when your devs login, they know where to go and what to do.

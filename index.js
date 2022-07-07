@@ -90,15 +90,9 @@ function comment_find(folders) {
         }
     }
 
-    var loaded_comments = exported_comments;
-    var loaded_errors = exported_errors;
-
-    exported_comments = [];
-    exported_errors = [];
-
     return { 
-        comments: loaded_comments, 
-        errors: loaded_errors
+        comments: exported_comments, 
+        errors: exported_errors
     }
 
 }

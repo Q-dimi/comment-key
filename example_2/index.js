@@ -1,4 +1,4 @@
-//^*^(wow-man-you-are-so-awesome)
+//^*^(wow-man-you-are-so-awesomepppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp)
 
 function hello_world() { 
     return 'hello world';
