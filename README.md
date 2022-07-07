@@ -37,4 +37,4 @@ You are a manager going through all of your files and making updates. You write 
 
 # how it works
 
-Uses the file system module to traverse a set of directories and for each file, searches for the correct syntax of the comment. Once '//^\*^(' is found, the comment gets built up and pushed to the comment set.
+Uses the file system module to traverse a set of directories looking for '//^\*^('. Once '//^\*^(' is found, the comment gets built up and pushed to the comment set.
