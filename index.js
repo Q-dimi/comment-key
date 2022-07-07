@@ -34,12 +34,9 @@ function comment_find(folders) {
                                 data[i+1] == '/' && 
                                 data[i+2] == '^' && 
                                 data[i+3] == '*' && 
-                                data[i+4] == '^' 
+                                data[i+4] == '^' && 
+                                data[i+5] == '('
                             ) { 
-
-                                if(data[i+5] !== '(') { 
-                                    continue;
-                                }
 
                                 var count = 0
                                 var stop = 4000;

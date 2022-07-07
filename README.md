@@ -30,3 +30,7 @@ for (let i = 0; i < errors.length; i++) {
 # use case
 
 You are a manager going through all of your files and making updates. You write comments so that when your devs login, they know where to go and what to do.
+
+# how it works
+
+Uses the file system module to traverse a set of directories and for each one, searches for the corect syntax of the comment. Once '//_^_(' is found, the comment gets built up and pushed to the comment set.
