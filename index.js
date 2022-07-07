@@ -79,9 +79,9 @@ function comment_find(folders) {
                 })
 
             } catch(err) { 
-                exported_comments.push({
+                exported_errors.push({
                     folders: folders[i].folder,
-                    error: err
+                    error: err.message
                 })
             }
         }
