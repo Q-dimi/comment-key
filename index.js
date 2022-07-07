@@ -15,13 +15,15 @@ function comment_find(folders) {
 
             try {
 
-                fs.recurseSync(folders[i].folder, ...folders[i].files, (filepath, relative, filename) => { //folders[i].files will not eval when all is passed. replace all with empty
+                fs.recurseSync(folders[i].folder, 
+                    ...folders[i].files, 
+                    (filepath, relative, filename) => {
 
                     if(filename) { 
 
                         var data = fs.readFileSync(filepath, 'utf8');
                         data = data.split('');
-                        var line_number = 0;
+                        var line_number = 1;
 
                         for(let i = 0; i < data.length; i++) { 
 
