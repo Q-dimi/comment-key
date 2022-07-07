@@ -76,6 +76,7 @@ function comment_find(folders) {
                             }
                         }
                     }
+                    
                 })
 
             } catch(err) { 
