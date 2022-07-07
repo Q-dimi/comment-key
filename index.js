@@ -79,11 +79,17 @@ function comment_find(folders) {
                 })
 
             } catch(err) { 
+
                 exported_errors.push({
-                    folders: folders[i].folder,
+                    index: i,
+                    folder: folders[i].folder,
+                    files: folders[i].files,
+                    possible_file_path: typeof(filepath) !== 'undefined' ? filepath : 'filepath not defined',
                     error: err.message
                 })
+                
             }
+
         }
     }
 
