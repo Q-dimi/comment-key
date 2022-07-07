@@ -3,7 +3,7 @@ var fs = require('file-system');
 var exported_comments = [];
 var exported_errors = [];
 
-modules.exports.comment_find = function(folders, keyWords) { 
+module.exports.comment_find = function(folders, keyWords) { 
 
     //folder that was found in main folder
     if(typeof(folders) == 'object' && folders.single == true) { 
