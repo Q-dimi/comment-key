@@ -1,1 +1,1 @@
-//^*^delete
+//^*^(awesome-man-you-ucjc)

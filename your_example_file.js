@@ -1,7 +1,5 @@
 var comment_find = require('./index');
 
-const keyWords = ['add', 'update', 'delete', 'team1', 'team2']; 
-
 const folders = [ 
     { folder: './example_1', files: 'all' },
     { folder: './example_2', files: 'all' }, 
@@ -9,7 +7,7 @@ const folders = [
     { folder: './example_4', files: 'all' },
 ];
 
-var result = comment_find(folders, keyWords);
+var result = comment_find(folders);
 var comments = result.comments; 
 var errors = result.errors;
 

@@ -1,1 +1,1 @@
-//^*^delete
+//^*^(delete-this-comment-now)
