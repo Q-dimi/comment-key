@@ -9,13 +9,11 @@ function comment_find(folders, keyWords) {
                     if(filename) { 
                         const data = fs.readFileSync(filepath, 'utf8');
                         var string_contents = data.split(' ');
-                        var line_number = 0;
                         for(let i = 0; i < string_contents.length; i++) { 
-                            line_number = string_contents[i] == '\n' ? line_number += 1 : line_number;
                             for(let j = 0; j < keyWords.length; j++) { 
                                 if(string_contents[i] == `//^*^${keyWords[j]}`) { 
                                     exported_comments.push({
-                                        hint:  `control f this comment to find where it is - ${line_number}`, 
+                                        hint:  `control f this comment to find where it is`, 
                                         folder: filepath, 
                                         file: filename, 
                                         comment: `//^*^${keyWords[j]}`,
