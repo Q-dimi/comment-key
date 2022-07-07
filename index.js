@@ -3,10 +3,10 @@ var fs = require('file-system');
 var exported_comments = [];
 var exported_errors = [];
 
-module.exports.comment_find = function(folders, keyWords) { 
+function comment_find(folders, keyWords) { 
 
-    //folder that was found in main folder
-    if(typeof(folders) == 'object' && folders.single == true) { 
+    //folder that was found in folder while traversing... 
+    if(typeof(folders) == 'object' && Array.isArray(folders) == false && folders.single == true) { 
 
         fs.recurseSync(folders.folder, function(filepath, relative, filename) {
 
@@ -42,7 +42,7 @@ module.exports.comment_find = function(folders, keyWords) {
 
             } else { 
 
-                find_and_return_paths_with_keys({folder: filepath, single: true});
+                comment_find({folder: filepath, single: true}, keyWords);
 
             }
 
@@ -91,7 +91,7 @@ module.exports.comment_find = function(folders, keyWords) {
 
                 } else { 
 
-                    find_and_return_paths_with_keys({folder: filepath, single: true});
+                    comment_find({folder: filepath, single: true}, keyWords);
 
                 }
 
@@ -145,7 +145,7 @@ module.exports.comment_find = function(folders, keyWords) {
 
                 } else { 
 
-                    find_and_return_paths_with_keys({folder: filepath, single: true});
+                    comment_find({folder: filepath, single: true}, keyWords);
 
                 }
 
@@ -160,3 +160,5 @@ module.exports.comment_find = function(folders, keyWords) {
     return result
 
 }
+
+module.exports = comment_find;
