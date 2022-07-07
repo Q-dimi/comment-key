@@ -42,7 +42,7 @@ modules.exports.comment_find = function(folders, keyWords) {
 
             } else { 
 
-                return find_and_return_paths_with_keys({folder: filepath, single: true});
+                find_and_return_paths_with_keys({folder: filepath, single: true});
 
             }
 
@@ -91,7 +91,7 @@ modules.exports.comment_find = function(folders, keyWords) {
 
                 } else { 
 
-                    return find_and_return_paths_with_keys({folder: filepath, single: true});
+                    find_and_return_paths_with_keys({folder: filepath, single: true});
 
                 }
 
@@ -145,7 +145,7 @@ modules.exports.comment_find = function(folders, keyWords) {
 
                 } else { 
 
-                    return find_and_return_paths_with_keys({folder: filepath, single: true});
+                    find_and_return_paths_with_keys({folder: filepath, single: true});
 
                 }
 
