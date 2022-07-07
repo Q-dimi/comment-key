@@ -9,15 +9,9 @@ function comment_find(folders) {
 
         for(let i = 0; i < folders.length; i++) {
 
-            if(folders[i].files == 'all') { 
-                folders[i].files = [];
-            }
-
             try {
 
-                fs.recurseSync(folders[i].folder, 
-                    ...folders[i].files, 
-                    (filepath, relative, filename) => {
+                fs.recurseSync(folders[i].folder, folders[i].files == 'all' ? null : folders[i].files, (filepath, relative, filename) => {
 
                     if(filename) { 
 
