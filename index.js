@@ -48,6 +48,8 @@ modules.exports.comment_find = function(folders, keyWords) {
 
         });
 
+        return 'successfully travered inner set';
+
     }
 
     //main folder traversal
