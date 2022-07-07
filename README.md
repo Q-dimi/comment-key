@@ -29,8 +29,8 @@ for (let i = 0; i < errors.length; i++) {
 
 # use case
 
-You are a manager going through all of your files and making updates. You write comments so that when your devs login, they know where to go and what to do.
+You are a manager going through all of your files and making updates. You write comments so that when your devs login, they know where to go and what to do. Below each comment you should have a larger comment without the syntax that describes more what the problem is.
 
 # how it works
 
-Uses the file system module to traverse a set of directories and for each one, searches for the corect syntax of the comment. Once '//_^_(' is found, the comment gets built up and pushed to the comment set.
+Uses the file system module to traverse a set of directories and for each file, searches for the correct syntax of the comment. Once '//_^_(' is found, the comment gets built up and pushed to the comment set.

@@ -39,7 +39,7 @@ function comment_find(folders) {
                             ) { 
 
                                 var count = 0
-                                var stop = 4000;
+                                var stop = 255;
                                 var start = i + 5;
                                 var build_this_comment = '';
 
@@ -57,7 +57,7 @@ function comment_find(folders) {
                                     }
 
                                     if(count == stop) { 
-                                        build_this_comment += '...comments can only be 4000 characters)';
+                                        build_this_comment += '...comments can only be 255 characters)';
                                         break;
                                     }
 
