@@ -1,4 +1,4 @@
-var comment_find = require('./index');
+var comment_keys = require('./index');
 
 const folders = [ 
     { folder: './example_1', files: 7 },
@@ -7,7 +7,7 @@ const folders = [
     { folder: './example_4', files: 'all' },
 ];
 
-var result = comment_find(folders);
+var result = comment_keys(folders);
 var comments = result.comments; 
 var errors = result.errors;
 

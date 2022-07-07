@@ -1,6 +1,6 @@
 var fs = require('file-system');
 
-function comment_find(folders) {
+function comment_keys(folders) {
 
     var exported_comments = [];
     var exported_errors = [];
@@ -101,4 +101,4 @@ function comment_find(folders) {
 
 } 
 
-module.exports = comment_find;
+module.exports = comment_keys;

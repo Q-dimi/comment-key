@@ -1,21 +1,21 @@
 {
-  "name": "comment_find",
-  "version": "1.0.7",
-  "description": "find comments in files that tell your team what to do",
+  "name": "comment_keys",
+  "version": "1.0.8",
+  "description": "create and find comments in files that tell your team what to do",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Q-dimi/comment_find.git"
+    "url": "git+https://github.com/Q-dimi/comment_keys.git"
   },
   "author": "Alexander Eatman",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Q-dimi/comment_find/issues"
+    "url": "https://github.com/Q-dimi/comment_keys/issues"
   },
-  "homepage": "https://github.com/Q-dimi/comment_find#readme",
+  "homepage": "https://github.com/Q-dimi/comment_keys#readme",
   "dependencies": {
     "file-system": "^2.2.2"
   }

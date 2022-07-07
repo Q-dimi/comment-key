@@ -1,4 +1,4 @@
-# comment_find
+# comment_keys
 
 Write comments with a specific syntax so that your team members know where to go and what to do. Comments must be written in this syntax
 
@@ -7,7 +7,7 @@ Write comments with a specific syntax so that your team members know where to go
 ```
 
 ```js
-const comment_find = require("comment-find");
+const comment_keys = require("comment-find");
 
 const folders = [
   { folder: "./example_1", files: ["wow.js"] },
@@ -16,7 +16,7 @@ const folders = [
   { folder: "./example_4", files: "all" },
 ];
 
-var result = comment_find(folders);
+var result = comment_keys(folders);
 var comments = result.comments;
 var errors = result.errors;
 
