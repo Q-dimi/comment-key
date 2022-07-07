@@ -99,7 +99,7 @@ module.exports.comment_find = function(folders, keyWords) {
 
         } else { 
 
-            if(typeof(folders[i].files) !== 'object' || !Array.isArray(folders[i].files)) { 
+            if(typeof(folders[i].files) !== 'object' || Array.isArray(folders[i].files) == false) { 
 
                 exported_errors.push({ 
                     folder: folders[i].folder, 

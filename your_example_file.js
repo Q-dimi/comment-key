@@ -3,10 +3,10 @@ var comment_find = require('./index');
 const keyWords = ['add', 'update', 'delete']; 
 
 const folders = [ 
-    { folder: '/example_folder_1', files: 'all' },
-    { folder: '/example_folder_2', files: 'all' }, 
-    { folder: '/example_folder_3', files: ['index.js', 'account.js'] },
-    { folder: '/example_folder_4', files: ['bank.js'] },
+    { folder: '/example_1', files: 'all' },
+    { folder: '/example_2', files: 'all' }, 
+    { folder: '/example_3', files: ['index.js', 'account.js'] },
+    { folder: '/example_4', files: ['bank.js'] },
 ];
 
 var result = comment_find(folders, keyWords);
