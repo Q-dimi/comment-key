@@ -1,3 +1,5 @@
+//type 'node example/example.js'
+
 var comment_keys = require('../index');
 
 const folders = [ 
