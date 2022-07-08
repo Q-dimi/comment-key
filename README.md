@@ -11,7 +11,7 @@ const comment_keys = require("comment_keys");
 
 const folders = [
   { folder: "./cron", files: "all" }, // { folder: './my_folder', files: ([]), ('all'), (['a.js', 'b.js']) }
-  { folder: "./db", files: "all" },
+  { folder: "./db", files: "all" }, // 'all' searches through all directories and files
   { folder: "./routes", files: "all" },
   { folder: "./public", files: "all" },
   { folder: "./views", files: "all" },
@@ -31,7 +31,7 @@ for (let i = 0; i < comments.length; i++) {
 }
 ```
 
-# use case
+# Use case
 
 You are a manager going through all of your files and making updates. You write comments everywhere with the syntax (above) so that when your devs login, they see the list of comments and know where to go and what they need to do.
 <br><br>
@@ -39,6 +39,6 @@ You are an express developer who writes comments as to do lists.
 <br><br>
 Below each comment you should have a larger comment without the syntax that describes what the problem is in detail.
 
-# how it works
+# How it works
 
 Uses the file system module to traverse a set of directories looking for '//^\*^('. Once '//^\*^(' is found, the comment gets built up and is pushed to the comment set.
