@@ -2,7 +2,10 @@ var fs = require('file-system');
 
 function comment_keys(folders) {
 
-    if(typeof(folders) !== 'object' || Array.isArray(folders) == false) { 
+    if(
+        typeof(folders) !== 'object' || 
+        Array.isArray(folders) == false
+    ) { 
         throw new Error('an array was not passed');
     }
 
