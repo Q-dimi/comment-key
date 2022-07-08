@@ -122,7 +122,7 @@ function iterate_through_file_text(filepath, exported_comments) {
 
             exported_comments.push({
                 line_number: line_number,
-                folder: filepath,
+                filepath: filepath,
                 comment: build_this_comment
             })
 

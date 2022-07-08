@@ -1,6 +1,6 @@
 # comment_keys
 
-Write comments with a specific syntax so that your team members know where to go and what to do. Comments must be written in this syntax
+Write comments with a specific syntax so that your team members know where to go and what to do. Comments must be written in this syntax..
 
 ```js
 //^*^(your comment here)
@@ -27,8 +27,11 @@ try {
 }
 
 //folders must be an array of objects containing folder and files
+
 //folder must be a string representing the folder to search through
+
 //files must be either an array of files as strings or a single string. If a single string the keyword must be 'all' for all files and folders traversed
+
 //the example above shows every possibility
 ```
 
