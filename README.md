@@ -1,5 +1,9 @@
 # comment_keys
 
+```sh
+npm install comment_keys
+```
+
 Write comments with a specific syntax and use them as to do lists. Comments must be written in this syntax..
 
 ```js
