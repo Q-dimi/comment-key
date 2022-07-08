@@ -70,7 +70,7 @@ function comment_keys(folders) {
                                 exported_comments.push({
                                     line_number: line_number,
                                     folder: filepath,
-                                    comment: build_this_comment.split('-').join(' ')// /:-/|
+                                    comment: build_this_comment
                                 })
 
                             }

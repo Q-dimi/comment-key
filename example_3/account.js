@@ -1,1 +1,1 @@
-//^*^(cool-this-comment-now)
+//^*^(cool this comment now)

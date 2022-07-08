@@ -3,7 +3,7 @@
 Write comments with a specific syntax so that your team members know where to go and what to do. Comments must be written in this syntax
 
 ```js
-//^*^(your-comment-here)
+//^*^(your comment here)
 ```
 
 ```js
