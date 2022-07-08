@@ -5,6 +5,7 @@ const folders = [
     { folder: './example_2', files: 'all' }, 
     { folder: './example_3', files: 'all' },
     { folder: './example_4', files: 'all' },
+    { folder: './', files: ['README.md', 'package.json'] },
 ];
 
 var result = comment_keys(folders);
