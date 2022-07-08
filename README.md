@@ -10,7 +10,7 @@ Write comments with a specific syntax and use them as to do lists. Comments must
 const comment_keys = require("comment_keys");
 
 const folders = [
-  { folder: "./cron", files: "all" }, // folder: './my_folder' files: [], 'all', ['a.js', 'b.js']
+  { folder: "./cron", files: "all" }, // { folder: './my_folder', files: ([]), ('all'), (['a.js', 'b.js']) }
   { folder: "./db", files: "all" },
   { folder: "./routes", files: "all" },
   { folder: "./public", files: "all" },
@@ -35,7 +35,7 @@ for (let i = 0; i < comments.length; i++) {
 
 You are a manager going through all of your files and making updates. You write comments everywhere with the syntax (above) so that when your devs login, they see the list of comments and know where to go and what they need to do.
 <br><br>
-You are an express developer who writes comments as reminders once in a while as to do lists.
+You are an express developer who writes comments as to do lists.
 <br><br>
 Below each comment you should have a larger comment without the syntax that describes what the problem is in detail.
 
