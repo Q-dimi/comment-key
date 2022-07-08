@@ -25,7 +25,7 @@ const folders = [
 var comments = [];
 
 try {
-  comments = comment - keys(folders);
+  comments = comment_keys(folders);
 } catch (err) {
   console.log(err.message);
 }
