@@ -39,29 +39,17 @@ function comment_keys(folders) {
             throw new Error(errors);
         }
 
-        try {
-
-            fs.recurseSync(
-                folders[i].folder, 
-                folders[i].files == 'all' ? null : folders[i].files, 
-                (filepath, relative, filename) => {
-                if(filename) { 
-                    iterate_through_file_text(
-                        filepath, 
-                        exported_comments
-                    ); 
-                }
-            })
-
-        } catch(err) { 
-
-            throw new Error(`
-                Production build error: 
-                Please check the recurse function in index.js: ` + 
-                err.message
-            )
-
-        }
+        fs.recurseSync(
+            folders[i].folder, 
+            folders[i].files == 'all' ? null : folders[i].files, 
+            (filepath, relative, filename) => {
+            if(filename) { 
+                iterate_through_file_text(
+                    filepath, 
+                    exported_comments
+                ); 
+            }
+        })
 
     }
 
