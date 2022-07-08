@@ -45,19 +45,19 @@ function comment_keys(folders) {
 
                                 while(true) { 
 
-                                    i++;
-
                                     if(data[start] == '\n') { 
                                         line_number = line_number + 1;
                                     }
 
                                     if(data[start] == ')') { 
                                         build_this_comment += ')';
+                                        i = start;
                                         break;
                                     }
 
                                     if(count == stop) { 
                                         build_this_comment += '...comments can only be 255 characters)';
+                                        i = start; //set i = to end of comment index
                                         break;
                                     }
 
