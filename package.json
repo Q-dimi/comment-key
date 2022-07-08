@@ -1,5 +1,5 @@
 {
-  "name": "comment-keys",
+  "name": "comment-key",
   "version": "1.1.6",
   "description": "create and find comments in files that tell your team what to do",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Q-dimi/comment-keys.git"
+    "url": "git+https://github.com/Q-dimi/comment-key.git"
   },
   "author": "Alexander Eatman",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Q-dimi/comment-keys/issues"
+    "url": "https://github.com/Q-dimi/comment-key/issues"
   },
-  "homepage": "https://github.com/Q-dimi/comment-keys#readme",
+  "homepage": "https://github.com/Q-dimi/comment-key#readme",
   "dependencies": {
     "file-system": "^2.2.2"
   }
