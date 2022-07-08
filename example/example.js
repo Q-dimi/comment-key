@@ -1,10 +1,10 @@
-var comment_keys = require('./index');
+var comment_keys = require('../index');
 
 const folders = [ 
-    { folder: './example_1', files: ['wow.js'] },
-    { folder: './example_2', files: 'all' }, 
-    { folder: './example_3', files: 'all' },
-    { folder: './example_4', files: 'all' },
+    { folder: './example/example_1', files: ['wow.js'] },
+    { folder: './example/example_2', files: 'all' }, 
+    { folder: './example/example_3', files: 'all' },
+    { folder: './example/example_4', files: 'all' },
     { folder: './', files: ['README.md', 'package.json'] },
 ];
 
