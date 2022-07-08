@@ -8,10 +8,10 @@ function wow() {
     return 'hello world';
 }
 
-//^*^(delete-this-here)
+//^*^(delete this here)
 
 for(let i = 0; i < 4; i++) { 
 
 }
 
-//^*^(add-a-button-here)
+//^*^(add a button here)

@@ -33,7 +33,7 @@ for (let i = 0; i < errors.length; i++) {
 
 # use case
 
-You are a manager going through all of your files and making updates. You write comments everywhere with the syntax (above) so that when your devs login, they see the list of comments and know where to go and what they need to do. Below each comment you should have a larger comment without the syntax that describes more what the problem is.
+You are a manager going through all of your files and making updates. You write comments everywhere with the syntax (above) so that when your devs login, they see the list of comments and know where to go and what they need to do. Below each comment you should have a larger comment without the syntax that describes what the problem is in detail.
 
 # how it works
 
