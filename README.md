@@ -1,7 +1,7 @@
-# comment_keys
+# comment-keys
 
 ```sh
-npm install comment_keys
+npm install comment-keys
 ```
 
 Write comments with a specific syntax and use them as to do lists. Comments must be written in this syntax..
@@ -11,7 +11,7 @@ Write comments with a specific syntax and use them as to do lists. Comments must
 ```
 
 ```js
-const comment_keys = require("comment_keys");
+const comment_keys = require("comment-keys");
 
 const folders = [
   { folder: "./cron", files: "all" }, // { folder: './my_folder', files: ([]), ('all'), (['a.js', 'b.js']) }
@@ -25,7 +25,7 @@ const folders = [
 var comments = [];
 
 try {
-  comments = comment_keys(folders);
+  comments = comment - keys(folders);
 } catch (err) {
   console.log(err.message);
 }
