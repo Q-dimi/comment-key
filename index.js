@@ -2,103 +2,130 @@ var fs = require('file-system');
 
 function comment_keys(folders) {
 
+    if(typeof(folders) !== 'object' || Array.isArray(folders) == false) { 
+        throw new Error('an array was not passed');
+    }
+
     var exported_comments = [];
-    var exported_errors = [];
 
-    if(
-        typeof(folders) == 'object' && 
-        Array.isArray(folders) == true
-    ) { 
+    for(let i = 0; i < folders.length; i++) {
 
-        for(let i = 0; i < folders.length; i++) {
+        var errors = '';
 
-            try {
+        if(typeof(folders[i].folder) !== 'string') { 
+            errors += 'folder: folder must be a string \n';
+        }
 
-                fs.recurseSync(folders[i].folder, folders[i].files == 'all' ? null : folders[i].files, (filepath, relative, filename) => {
+        if(
+            typeof(folders[i].files) !== 'string' && 
+            (typeof(folders[i].files) !== 'object' ||
+            Array.isArray(folders[i].files == false))
+        ) { 
+            errors += 'files: files must be a string or array \n';
+        }
 
-                    if(filename) { 
+        if(
+            typeof(folders[i].files) == 'string' && 
+            folders[i].files !== 'all'
+        ) {  
+            errors += 'files: if files is a string, the keyword must be (all) for all files and folders \n';
+        }
 
-                        var data = fs.readFileSync(filepath, 'utf8');
-                        data = data.split('');
+        if(errors.trim().length > 0) { 
+            errors += `index: ${i}`;
+            throw new Error(errors);
+        }
 
-                        var line_number = 1;
+        try {
 
-                        for(let i = 0; i < data.length; i++) { 
+            fs.recurseSync(
+                folders[i].folder, 
+                folders[i].files == 'all' ? null : folders[i].files, 
+                (filepath, relative, filename) => {
+                if(filename) { 
+                    iterate_through_file_text(
+                        filepath, 
+                        exported_comments
+                    ); 
+                }
+            })
 
-                            if(data[i] == '\n') { 
-                                line_number = line_number + 1;
-                            }
+        } catch(err) { 
 
-                            if(
-                                data[i] == '/' && 
-                                data[i+1] == '/' && 
-                                data[i+2] == '^' && 
-                                data[i+3] == '*' && 
-                                data[i+4] == '^' && 
-                                data[i+5] == '('
-                            ) { 
+            throw new Error(`
+                Production build error: 
+                Please check the recurse function in index.js: ` + 
+                err.message
+            )
 
-                                var count = 0
-                                var stop = 255;
-                                var start = i + 5;
-                                var build_this_comment = '';
+        }
 
-                                while(true) { 
+    }
 
-                                    if(data[start] == '\n') { 
-                                        line_number = line_number + 1;
-                                    }
+    return exported_comments;
 
-                                    if(data[start] == ')') { 
-                                        build_this_comment += ')';
-                                        i = start;
-                                        break;
-                                    }
+} 
 
-                                    if(count == stop) { 
-                                        build_this_comment += '...comments can only be 255 characters)';
-                                        i = start; //set i = to end of comment index
-                                        break;
-                                    }
+function iterate_through_file_text(filepath, exported_comments) { 
 
-                                    build_this_comment += data[start];
-                                    start += 1;
-                                    count += 1;
+    var data = fs.readFileSync(filepath, 'utf8');
+    data = data.split('');
 
-                                }
+    var line_number = 1;
 
-                                exported_comments.push({
-                                    line_number: line_number,
-                                    folder: filepath,
-                                    comment: build_this_comment
-                                })
+    for(let i = 0; i < data.length; i++) { 
 
-                            }
-                        }
-                    }
-                    
-                })
+        if(data[i] == '\n') { 
+            line_number += 1;
+        }
 
-            } catch(err) { 
+        if(
+            data[i] == '/' && 
+            data[i+1] == '/' && 
+            data[i+2] == '^' && 
+            data[i+3] == '*' && 
+            data[i+4] == '^' && 
+            data[i+5] == '('
+        ) { 
 
-                exported_errors.push({
-                    index: i,
-                    folder: folders[i].folder,
-                    files: folders[i].files,
-                    possible_file_path: typeof(filepath) !== 'undefined' ? filepath : 'filepath not defined',
-                    error: err.message
-                })
-                
+            var count = 0
+            var stop = 255;
+            var start = i + 5;
+            var build_this_comment = '';
+
+            while(true) { 
+
+                if(data[start] == '\n') { 
+                    line_number += 1;
+                }
+
+                if(data[start] == ')') { 
+                    build_this_comment += ')';
+                    i = start;
+                    break;
+                }
+
+                if(count == stop) { 
+                    build_this_comment += '...comments can only be 255 characters)';
+                    i = start;
+                    break;
+                }
+
+                build_this_comment += data[start];
+                start += 1;
+                count += 1;
+
             }
+
+            exported_comments.push({
+                line_number: line_number,
+                folder: filepath,
+                comment: build_this_comment
+            })
 
         }
     }
 
-    return { 
-        comments: exported_comments, 
-        errors: exported_errors
-    }
-
-} 
+}
 
 module.exports = comment_keys;

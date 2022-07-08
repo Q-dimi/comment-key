@@ -11,24 +11,25 @@ const comment_keys = require("comment_keys");
 
 const folders = [
   { folder: "./example_1", files: ["wow.js"] },
-  { folder: "./example_2", files: [] },
-  { folder: "./example_3", files: ["account.js", "bank.js"] },
+  { folder: "./example_2", files: "all" },
+  { folder: "./example_3", files: "all" },
   { folder: "./example_4", files: "all" },
+  { folder: "./", files: ["README.md", "package.json"] },
 ];
 
-var result = comment_keys(folders);
-var comments = result.comments;
-var errors = result.errors;
-
-console.log("COMMENTS");
-for (let i = 0; i < comments.length; i++) {
-  console.log(comments[i]);
+try {
+  var comments = comment_keys(folders);
+  for (let i = 0; i < comments.length; i++) {
+    console.log(comments[i]);
+  }
+} catch (err) {
+  console.log(err.message);
 }
 
-console.log("ERRORS");
-for (let i = 0; i < errors.length; i++) {
-  console.log(errors[i]);
-}
+//folders must be an array of objects containing folder and files
+//folder must be a string representing the folder to search through
+//files must be either an array of files as strings or a single string. If a single string the keyword must be 'all' for all files and folders traversed
+//the example above shows every possibility
 ```
 
 # use case

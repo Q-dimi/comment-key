@@ -1,23 +1,18 @@
 var comment_keys = require('./index');
 
 const folders = [ 
-    { folder: './example_1', files: 'all' },
+    { folder: './example_1', files: ['wow.js'] },
     { folder: './example_2', files: 'all' }, 
     { folder: './example_3', files: 'all' },
     { folder: './example_4', files: 'all' },
     { folder: './', files: ['README.md', 'package.json'] },
 ];
 
-var result = comment_keys(folders);
-var comments = result.comments; 
-var errors = result.errors;
-
-console.log('COMMENTS');
-for(let i = 0; i < comments.length; i++) { 
-    console.log((comments[i]));
-}
-
-console.log('ERRORS')
-for(let i = 0; i < errors.length; i++) { 
-    console.log((errors[i]));
+try {
+    var comments = comment_keys(folders);
+    for(let i = 0; i < comments.length; i++) { 
+        console.log((comments[i]));
+    }
+} catch(err) { 
+    console.log(err.message)
 }
