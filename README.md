@@ -32,6 +32,9 @@ try {
 
 for (let i = 0; i < comments.length; i++) {
   console.log(comments[i]);
+  //linenumber
+  //filepath
+  //comment
 }
 ```
 
@@ -40,6 +43,8 @@ for (let i = 0; i < comments.length; i++) {
 You are a manager going through all of your files and making updates. You write comments everywhere with the syntax (above) so that when your devs login, they see the list of comments and know where to go and what they need to do.
 <br><br>
 You are an express developer who writes comments as to do lists.
+<br><br>
+You are browsing through your code making sure everything is correct before release. You find a few bugs and write some comment keys.
 <br><br>
 Below each comment you should have a larger comment without the syntax that describes what the problem is in detail.
 

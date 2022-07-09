@@ -83,6 +83,7 @@ function iterate_through_file_text(filepath, exported_comments) {
             var stop = 255;
             var start = i + 5;
             var build_this_comment = '';
+            var comment_line_number = line_number;
 
             while(true) { 
 
@@ -109,7 +110,7 @@ function iterate_through_file_text(filepath, exported_comments) {
             }
 
             exported_comments.push({
-                line_number: line_number,
+                linenumber: comment_line_number,
                 filepath: filepath,
                 comment: build_this_comment
             })

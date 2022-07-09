@@ -10,26 +10,15 @@ const folders = [
     { folder: './', files: ['README.md', 'package.json'] },
 ];
 
+
+var comments = [];
+
 try {
-    var comments = comment_keys(folders);
-    for(let i = 0; i < comments.length; i++) { 
-        console.log((comments[i]));
-    }
+    comments = comment_keys(folders);
 } catch(err) { 
     console.log(err.message)
 }
 
-// var comments = [];
-
-// try {
-//     comments = comment_keys(folders);
-// } catch(err) { 
-//     console.log(err.message)
-// }
-
-// for(let i = 0; i < comments.length; i++) { 
-//     console.log((comments[i]));
-// }
-
-//pass back comments
-
+for(let i = 0; i < comments.length; i++) { 
+    console.log((comments[i]));
+}
