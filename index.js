@@ -56,7 +56,7 @@ function comment_keys(folders) {
 
                 total_bits += file_contents.bits;
                 file_count += 1;
-                
+
             }
 
         })
@@ -64,11 +64,11 @@ function comment_keys(folders) {
     }
 
     return { 
+        file_info: file_info, 
         comments: exported_comments, 
         total_time: ((Date.now() - start) / 1000), 
         total_comments: exported_comments.length, 
         total_files: file_count,
-        file_info: file_info, 
         total_bytes: total_bits / 8, 
     }
 

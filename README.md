@@ -106,8 +106,8 @@ console.log(result.file_info);
 
 # Use case
 
-- You are a manager going through all of your files and making updates. You write comments everywhere with the syntax (above) so that your devs can see the list of comments, know where to go and what they need to do. After your devs work on their keys, you as a manager host a zoom call the next day and ask everyone how their comment keys went. _ You are a junior who is stuck on a problem so you leave a comment key with your email and the question you have. _ You are clicking around in your application and find a few bugs so you write some comment keys to handle them later.
-  Below each comment you should have a larger comment without the syntax that describes what the problem is in detail.
+You are a manager going through all of your files and making updates. You write comments everywhere with the syntax (above) so that your devs can see the list of comments, know where to go and what they need to do. After your devs work on their keys, you as a manager host a zoom call the next day and ask everyone how their comment keys went. / You are a junior who is stuck on a problem so you leave a comment key with your email and the question you have. / You are clicking around in your application and find a few bugs so you write some comment keys to handle them later. /
+Below each comment you should have a larger comment without the syntax that describes what the problem is in detail.
 
 # How it works
 
