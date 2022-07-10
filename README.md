@@ -1,6 +1,6 @@
 # comment-key
 
-comment-key will search through all your directories and files looking for comments with a specific syntax. Specifiy one directory and all inner directories and files will be checked. Increases developer productivity. Works well when using docker or github and sharing projects. Great for asking and answering questions and leaving contact info.
+Comment-key will search through all your directories and files looking for comments with a specific syntax. Specifiy one directory and all inner directories and files will be checked. Increases developer productivity. Works well when using docker or github and sharing projects. Great for asking and answering questions and leaving contact info.
 
 ```sh
 npm install comment-key
@@ -12,9 +12,9 @@ Comments must be written in this syntax..
 //^*^(your comment here)
 ```
 
-```js
-//examples
+Examples
 
+```js
 //^*^(add a button here)
 
 /*
@@ -37,9 +37,11 @@ Comments must be written in this syntax..
 ```js
 const comment_keys = require("comment-key");
 
+// { folder: './my_folder', files: ([]), ('all'), (['a.js', 'b.js']) }
+// 'all' searches through all directories and files
 const folders = [
-  { folder: "./cron", files: "all" }, // { folder: './my_folder', files: ([]), ('all'), (['a.js', 'b.js']) }
-  { folder: "./db", files: "all" }, // 'all' searches through all directories and files
+  { folder: "./cron", files: "all" },
+  { folder: "./db", files: "all" },
   { folder: "./routes", files: "all" },
   { folder: "./public", files: "all" },
   { folder: "./views", files: "all" },
