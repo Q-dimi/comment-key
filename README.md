@@ -13,7 +13,7 @@ Comments must be written in this syntax..
 
 /*
   optional details about the comment
-/*
+*/
 ```
 
 ```js
