@@ -6,13 +6,13 @@ Comment-key will search through all your directories and files looking for comme
 npm install comment-key
 ```
 
-Comments must be written in this syntax..
+# Syntax
 
 ```js
 //^*^(your comment here)
 ```
 
-Examples
+# Examples
 
 ```js
 //^*^(add a button here)
@@ -33,6 +33,8 @@ Examples
   im not sure what this function does...
 */
 ```
+
+# Getting Started
 
 ```js
 const comment_keys = require("comment-key");
