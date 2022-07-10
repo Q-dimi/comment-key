@@ -27,10 +27,16 @@ npm install comment-key
   update the regular expression to accept numbers 1-9
 */
 
-//^*^(Im not sure what this is? can you please explain and send me an email at johndoe@gmail.com)
+//^*^(Im not sure what this is? can someone please explain)
 
 /*
   im not sure what this function does...
+*/
+
+//^*^(someone send an email to jdoe@mail.com)
+
+/*
+  I dont know how this works. Can someone send me an email.
 */
 ```
 
@@ -39,8 +45,11 @@ npm install comment-key
 ```js
 const comment_keys = require("comment-key");
 
-// { folder: './my_folder', files: ([]), ('all'), (['a.js', 'b.js']) }
-// 'all' searches through all directories and files
+/*
+   { folder: './my_folder', files: ([]), ('all'), (['a.js', 'b.js']) }
+   'all' searches through all directories and files
+*/
+
 const folders = [
   { folder: "./cron", files: "all" },
   { folder: "./db", files: "all" },
