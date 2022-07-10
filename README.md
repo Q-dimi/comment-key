@@ -1,6 +1,6 @@
 # comment-key
 
-Comment-key will search through all your directories and files looking for comments with a specific syntax. Specifiy one directory and all inner directories and files will be checked. Increases developer productivity. Works well when using docker or github and sharing projects. Great for asking and answering questions and leaving contact info.
+Comment-key will search through all your directories and files looking for comments with a specific syntax. Specifiy one directory and all inner directories and files will be checked.
 
 ```sh
 npm install comment-key
@@ -27,13 +27,13 @@ npm install comment-key
   update the regular expression to accept numbers 1-9
 */
 
-//^*^(Im not sure what this is? can someone please explain)
+//^*^(Im not sure what this is? can someone please explain in this key)
 
 /*
   im not sure what this function does...
 */
 
-//^*^(someone send an email to jdoe@mail.com)
+//^*^(I do not understand. someone send an email to jdoe@mail.com)
 
 /*
   I dont know how this works. Can someone send me an email.
@@ -69,16 +69,16 @@ try {
 
 for (let i = 0; i < comments.length; i++) {
   console.log(comments[i]);
-  //linenumber
   //filepath
+  //linenumber
   //comment
 }
 ```
 
 # Use case
 
-You are a manager going through all of your files and making updates. You write comments everywhere with the syntax (above) so that when your devs login, they see the list of comments and know where to go and what they need to do. You are a junior who is stuck on a problem so you leave a comment key with your email and the question you have. You are clicking around in your application and find a few bugs so you write some comment keys to handle them later.
-Below each comment you should have a larger comment without the syntax that describes what the problem is in detail.
+- You are a manager going through all of your files and making updates. You write comments everywhere with the syntax (above) so that your devs can see the list of comments, know where to go and what they need to do. After your devs work on their keys, you as a manager host a zoom call the next day and ask everyone how their comment keys went. _ You are a junior who is stuck on a problem so you leave a comment key with your email and the question you have. _ You are clicking around in your application and find a few bugs so you write some comment keys to handle them later.
+  Below each comment you should have a larger comment without the syntax that describes what the problem is in detail.
 
 # How it works
 

@@ -10,6 +10,7 @@ function comment_keys(folders) {
     }
 
     var exported_comments = [];
+    var start = Date.now();
 
     for(let i = 0; i < folders.length; i++) {
 
@@ -53,6 +54,10 @@ function comment_keys(folders) {
 
     }
 
+    var end_time = Date.now() - start;
+    end_time = end_time / 1000;
+    console.log(end_time + ' seconds');
+
     return exported_comments;
 
 } 
@@ -60,23 +65,22 @@ function comment_keys(folders) {
 function iterate_through_file_text(filepath, exported_comments) { 
 
     var data = fs.readFileSync(filepath, 'utf8');
-    data = data.split('');
 
     var line_number = 1;
 
     for(let i = 0; i < data.length; i++) { 
 
-        if(data[i] == '\n') { 
+        if(data.charAt(i) == '\n') { 
             line_number += 1;
         }
 
         if(
-            data[i] == '/' && 
-            data[i+1] == '/' && 
-            data[i+2] == '^' && 
-            data[i+3] == '*' && 
-            data[i+4] == '^' && 
-            data[i+5] == '('
+            data.charAt(i) == '/' && 
+            data.charAt(i+1) == '/' && 
+            data.charAt(i+2) == '^' && 
+            data.charAt(i+3) == '*' && 
+            data.charAt(i+4) == '^' && 
+            data.charAt(i+5) == '('
         ) { 
 
             var count = 0
@@ -87,11 +91,11 @@ function iterate_through_file_text(filepath, exported_comments) {
 
             while(true) { 
 
-                if(data[start] == '\n') { 
+                if(data.charAt(start) == '\n') { 
                     line_number += 1;
                 }
 
-                if(data[start] == ')') { 
+                if(data.charAt(start) == ')') { 
                     build_this_comment += ')';
                     i = start;
                     break;
@@ -103,15 +107,15 @@ function iterate_through_file_text(filepath, exported_comments) {
                     break;
                 }
 
-                build_this_comment += data[start];
+                build_this_comment += data.charAt(start);
                 start += 1;
                 count += 1;
 
             }
 
             exported_comments.push({
-                linenumber: comment_line_number,
                 filepath: filepath,
+                linenumber: comment_line_number,
                 comment: build_this_comment
             })
 
