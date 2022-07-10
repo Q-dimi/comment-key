@@ -10,9 +10,27 @@ Comments must be written in this syntax..
 
 ```js
 //^*^(your comment here)
+```
+
+```js
+//examples
+
+//^*^(add a button here)
 
 /*
-  optional details about the comment
+  please make sure to add a button that updates the shopping cart
+*/
+
+//^*^(update this regular expression)
+
+/*
+  update the regular expression to accept numbers 1-9
+*/
+
+//^*^(Im not sure what this is? can you please explain and send me an email at johndoe@gmail.com)
+
+/*
+  im not sure what this function does...
 */
 ```
 
