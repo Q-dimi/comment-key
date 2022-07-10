@@ -4,7 +4,10 @@
 npm install comment-key
 ```
 
-Write comments with a specific syntax and use them as to do lists. Comments must be written in this syntax..
+comment-key will search through all your directories and files looking for comments with a specific syntax. Specifiy one directory and all inner directories and files will be checked. Increases developer productivity. Works well when using docker or github and sharing projects. Great for asking and answering questions and leaving contact info.
+
+<br><br>
+Comments must be written in this syntax..
 
 ```js
 //^*^(your comment here)
