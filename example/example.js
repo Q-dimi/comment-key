@@ -1,5 +1,3 @@
-//type 'node example/example.js'
-
 var comment_keys = require('../index');
 
 const folders = [ 
@@ -10,15 +8,32 @@ const folders = [
     { folder: './', files: ['README.md', 'package.json'] },
 ];
 
-
-var comments = [];
+var result = [];
 
 try {
-    comments = comment_keys(folders);
+    result = comment_keys(folders);
 } catch(err) { 
     console.log(err.message)
 }
 
-for(let i = 0; i < comments.length; i++) { 
-    console.log((comments[i]));
+//comments
+console.log('COMMENTS:');
+for(let i = 0; i < result.comments.length; i++) { 
+    console.log((result.comments[i]));
 }
+
+//total comments
+console.log('comments: ' + result.total_comments);
+
+//total time
+console.log('time taken: ' + result.total_time + ' seconds');
+
+//total files 
+console.log('files traversed: ' + result.total_files); 
+
+//total byttes
+console.log('total bytes: ' + result.total_bytes);
+
+//file sizes
+console.log('FILE INFO:');
+console.log(result.file_info);

@@ -59,20 +59,49 @@ const folders = [
   { folder: "./", files: ["app.js"] },
 ];
 
-var comments = [];
+var result = [];
 
 try {
-  comments = comment_keys(folders);
+  result = comment_keys(folders);
 } catch (err) {
   console.log(err.message);
 }
 
-for (let i = 0; i < comments.length; i++) {
-  console.log(comments[i]);
+//comments
+console.log("COMMENTS:");
+for (let i = 0; i < result.comments.length; i++) {
+  console.log(result.comments[i]);
   //filepath
   //linenumber
   //comment
 }
+
+//total comments
+console.log(result.total_comments);
+
+//total time /s
+console.log(result.total_time);
+
+//total files
+console.log(result.total_files);
+
+//total byttes
+console.log(result.total_bytes);
+
+//file info
+console.log(result.file_info);
+/*
+  { 
+    filepath: { 
+      file_size: bytes 
+      comments: array
+    }, 
+    filepath: { 
+      file_size: bytes 
+      comments: array
+    },  
+  }
+*/
 ```
 
 # Use case

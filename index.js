@@ -9,8 +9,11 @@ function comment_keys(folders) {
         throw new Error('an array was not passed');
     }
 
-    var exported_comments = [];
     var start = Date.now();
+    var exported_comments = [];
+    var file_info = {};
+    var file_count = 0;
+    var total_bits = 0;
 
     for(let i = 0; i < folders.length; i++) {
 
@@ -40,35 +43,47 @@ function comment_keys(folders) {
             throw new Error(errors);
         }
 
-        fs.recurseSync(
-            folders[i].folder, 
-            folders[i].files == 'all' ? null : folders[i].files, 
-            (filepath, relative, filename) => {
+        fs.recurseSync(folders[i].folder, folders[i].files == 'all' ? null : folders[i].files, (filepath, relative, filename) => {
+
             if(filename) { 
-                iterate_through_file_text(
-                    filepath, 
-                    exported_comments
-                ); 
+
+                var file_contents = iterate_through_file_text(filepath, exported_comments); 
+
+                file_info[filepath] = { 
+                    bytes: file_contents.bits / 8, 
+                    comments: file_contents.comments_per_section 
+                };
+
+                total_bits += file_contents.bits;
+                file_count += 1;
+                
             }
+
         })
 
     }
 
-    var end_time = Date.now() - start;
-    end_time = end_time / 1000;
-    console.log(end_time + ' seconds');
-
-    return exported_comments;
+    return { 
+        comments: exported_comments, 
+        total_time: ((Date.now() - start) / 1000), 
+        total_comments: exported_comments.length, 
+        total_files: file_count,
+        file_info: file_info, 
+        total_bytes: total_bits / 8, 
+    }
 
 } 
 
 function iterate_through_file_text(filepath, exported_comments) { 
 
     var data = fs.readFileSync(filepath, 'utf8');
-
+    var comments_per_section = [];
     var line_number = 1;
+    var bits = 0;
 
     for(let i = 0; i < data.length; i++) { 
+
+        bits += 8;
 
         if(data.charAt(i) == '\n') { 
             line_number += 1;
@@ -90,6 +105,8 @@ function iterate_through_file_text(filepath, exported_comments) {
             var comment_line_number = line_number;
 
             while(true) { 
+
+                bits += 8
 
                 if(data.charAt(start) == '\n') { 
                     line_number += 1;
@@ -117,10 +134,21 @@ function iterate_through_file_text(filepath, exported_comments) {
                 filepath: filepath,
                 linenumber: comment_line_number,
                 comment: build_this_comment
+            });
+
+            comments_per_section.push({ 
+                filepath: filepath,
+                linenumber: comment_line_number,
+                comment: build_this_comment
             })
 
         }
     }
+
+    return { 
+        bits: bits, 
+        comments_per_section: comments_per_section
+    };
 
 }
 
