@@ -10,6 +10,10 @@ Comments must be written in this syntax..
 
 ```js
 //^*^(your comment here)
+
+/*
+  optional details about the comment
+/*
 ```
 
 ```js
@@ -42,12 +46,7 @@ for (let i = 0; i < comments.length; i++) {
 
 # Use case
 
-You are a manager going through all of your files and making updates. You write comments everywhere with the syntax (above) so that when your devs login, they see the list of comments and know where to go and what they need to do.
-<br><br>
-You are an express developer who writes comments as to do lists.
-<br><br>
-You are browsing through your code making sure everything is correct before release. You find a few bugs and write some comment keys.
-<br><br>
+You are a manager going through all of your files and making updates. You write comments everywhere with the syntax (above) so that when your devs login, they see the list of comments and know where to go and what they need to do. You are a junior who is stuck on a problem so you leave a comment key with your email and the question you have. You are clicking around in your application and find a few bugs so you write some comment keys to handle them later.
 Below each comment you should have a larger comment without the syntax that describes what the problem is in detail.
 
 # How it works
