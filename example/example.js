@@ -22,18 +22,18 @@ for(let i = 0; i < result.comments.length; i++) {
     console.log((result.comments[i]));
 }
 
-//total comments
-console.log('comments: ' + result.total_comments);
+// //total comments
+// console.log('comments: ' + result.total_comments);
 
-//total time
-console.log('time taken: ' + result.total_time + ' seconds');
+// //total time
+// console.log('time taken: ' + result.total_time + ' seconds');
 
-//total files 
-console.log('files traversed: ' + result.total_files); 
+// //total files 
+// console.log('files traversed: ' + result.total_files); 
 
-//total byttes
-console.log('total bytes: ' + result.total_bytes);
+// //total byttes
+// console.log('total bytes: ' + result.total_bytes);
 
-//file sizes
-console.log('FILE INFO:');
-console.log(result.file_info);
+// //file sizes
+// console.log('FILE INFO:');
+// console.log(result.file_info);

@@ -44,21 +44,12 @@ function comment_keys(folders) {
         }
 
         fs.recurseSync(folders[i].folder, folders[i].files == 'all' ? null : folders[i].files, (filepath, relative, filename) => {
-
             if(filename) { 
-
                 var file_contents = iterate_through_file_text(filepath, exported_comments); 
-
-                file_info[filepath] = { 
-                    bytes: file_contents.bits / 8, 
-                    comments: file_contents.comments_per_section 
-                };
-
+                file_info[filepath] = { bytes: file_contents.bits / 8, comments: file_contents.comments_per_section };
                 total_bits += file_contents.bits;
                 file_count += 1;
-
             }
-
         })
 
     }
