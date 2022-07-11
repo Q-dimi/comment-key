@@ -124,7 +124,7 @@ function iterate_through_file_text(filepath, exported_comments) {
                 filepath: filepath,
                 linenumber: comment_line_number,
                 comment: build_this_comment
-            });
+            })
 
             comments_per_section.push({ 
                 linenumber: comment_line_number,
@@ -132,12 +132,13 @@ function iterate_through_file_text(filepath, exported_comments) {
             })
 
         }
+
     }
 
     return { 
         bits: bits, 
         comments_per_section: comments_per_section
-    };
+    }
 
 }
 
