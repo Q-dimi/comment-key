@@ -1,6 +1,6 @@
 {
   "name": "comment-key",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "create and find comments in files that tell your team what to do",
   "main": "index.js",
   "scripts": {
