@@ -55,12 +55,11 @@ function comment_keys(folders) {
     }
 
     return { 
-        file_info: file_info, 
         comments: exported_comments, 
-        total_time: ((Date.now() - start) / 1000), 
-        total_comments: exported_comments.length, 
-        total_files: file_count,
-        total_bytes: total_bits / 8, 
+        time_taken: ((Date.now() - start) / 1000), 
+        files_traversed: file_count,
+        bytes_traversed: total_bits / 8, 
+        file_info: file_info, 
     }
 
 } 

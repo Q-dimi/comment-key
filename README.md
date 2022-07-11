@@ -68,7 +68,6 @@ try {
 }
 
 //comments
-console.log("COMMENTS:");
 for (let i = 0; i < result.comments.length; i++) {
   console.log(result.comments[i]);
   //filepath
@@ -76,17 +75,14 @@ for (let i = 0; i < result.comments.length; i++) {
   //comment
 }
 
-//total comments
-console.log(result.total_comments);
+//time taken /s
+console.log(result.time_taken);
 
-//total time /s
-console.log(result.total_time);
+//files traversed
+console.log(result.files_traversed);
 
-//total files
-console.log(result.total_files);
-
-//total bytes
-console.log(result.total_bytes);
+//bytes traversed
+console.log(result.bytes_traversed);
 
 //file info
 console.log(result.file_info);
@@ -111,4 +107,4 @@ Below each comment you should have a larger comment without the syntax that desc
 
 # How it works
 
-Uses the file system module to traverse a set of directories looking for '//^\*^('. Once '//^\*^(' is found, the comment gets built up and is pushed to the comment set.
+Uses the file system module to traverse a set of directories looking for '//^\*^('. Once '//^\*^(' is found, the comment gets built and is pushed to the comment set.
