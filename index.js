@@ -128,7 +128,6 @@ function iterate_through_file_text(filepath, exported_comments) {
             });
 
             comments_per_section.push({ 
-                filepath: filepath,
                 linenumber: comment_line_number,
                 comment: build_this_comment
             })

@@ -31,7 +31,7 @@ for(let i = 0; i < result.comments.length; i++) {
 // //total files 
 // console.log('files traversed: ' + result.total_files); 
 
-// //total byttes
+// //total bytes
 // console.log('total bytes: ' + result.total_bytes);
 
 // //file sizes
