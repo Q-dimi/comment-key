@@ -105,6 +105,6 @@ console.log(result.file_info);
 You are a manager going through all of your files and making updates. You write comments everywhere with the syntax (above) so that your devs know where to go and what they need to do. After your devs work on their keys, you, as the manager, host a zoom call the next day and ask everyone how their comment keys went. / You are a junior who is stuck on a problem so you leave a comment key with your email and the question you have for your manager. / You are clicking around in your application and find a few bugs so you write some comment keys to handle them later. /
 Below each comment you should have a larger comment without the syntax that describes what the problem is in detail.
 
-# How it works
+# How It Works
 
 Uses the file system module to traverse a set of directories looking for '//^\*^('. Once '//^\*^(' is found, the comment gets built and is pushed to the comment set.
