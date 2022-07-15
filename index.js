@@ -89,7 +89,6 @@ function iterate_through_file_text(filepath, exported_comments) {
         ) { 
 
             bits += 8 * 4;
-            
             var count = 0
             var stop = 255;
             var start = i + 5;
